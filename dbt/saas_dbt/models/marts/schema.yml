@@ -1,0 +1,55 @@
+version: 2
+
+models:
+
+  - name: dim_users
+    description: "User dimension table"
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_plans
+    description: "Subscription plans dimension"
+    columns:
+      - name: plan_id
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_subscriptions
+    description: "Fact table for subscriptions"
+    columns:
+      - name: subscription_id
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
+
+      - name: plan_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_plans')
+              field: plan_id
+
+  - name: fct_payments
+    description: "Fact table for payments"
+    columns:
+      - name: payment_id
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        tests:
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
