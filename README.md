@@ -87,21 +87,18 @@ The analytics layer follows a star schema with subscription, payment, and event 
 ## Key Engineering Concepts Implemented
 
 ### 1. **Incremental Data Loading**
-   - Implemented in Python ingestion scripts using updated_at
-   - Loads only new or changed records
-   - Avoids full table reloads
+   - Implemented incremental extraction in Python using the `updated_at` column.
+   - Only new or changed records are processed, avoiding full table reloads.
+   - Raw tables use upsert logic to:
+     - Maintain one row per business key
+     - Prevent duplicates
+     - Ensure the latest record overwrites previous values
 
   Also implemented in dbt staging models using:
    - materialized = incremental
    - incremental_strategy = merge
 
-### 2. **Upsert Logic**
-Raw tables maintain:
-  - One row per business key
-  - No duplicates
-  - Latest record overwrites previous values
-
-### 3. **SCD Type 2 Snapshots (dbt)**
+### 2. **SCD Type 2 Snapshots (dbt)**
 Implemented for the users table:
 Tracks changes in:
   - email
@@ -111,7 +108,7 @@ Tracks changes in:
 
 Maintains historical records for analysis
 
-### 4. **Data Quality and Best Practices**
+### 3. **Data Quality and Best Practices**
 - Implemented dbt tests for data quality:
   - Not null tests
   - Unique key validation
@@ -125,22 +122,22 @@ Maintains historical records for analysis
 ## <img width="30" height="30" alt="Power-BI" src="https://github.com/user-attachments/assets/ce1aa523-bd1e-478d-ba13-59fbddbd12d9" /> Analytics Dashboard:
 The Power BI report includes four pages.
 
-1. **Revenue Overview**
+#### 1. **Revenue Overview**
 
 <img width="600" height="600" alt="01_retention_overview" src="https://github.com/user-attachments/assets/3ba29bb4-810a-4e51-8634-e984bb6648cb" />
 
 
-2. **Growth Metrics**
+#### 2. **Growth Metrics**
 
 <img width="600" height="600" alt="02_growth_metrics" src="https://github.com/user-attachments/assets/f54fb100-d355-4c93-9b8f-4286da1a6939" />
 
 
-3. **Retention & Churn**
+#### 3. **Retention & Churn**
 
 <img width="600" height="600" alt="03_retention_and_churn" src="https://github.com/user-attachments/assets/31df48c4-957b-4ac1-a648-6fb22bc9d5f4" />
 
 
-4. **Product Engagement**
+#### 4. **Product Engagement**
 
 <img width="600" height="600" alt="04_product_engagement" src="https://github.com/user-attachments/assets/51a957ba-758c-4530-aab1-5d1a248e0d00" />
 
