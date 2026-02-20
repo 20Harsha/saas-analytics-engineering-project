@@ -83,7 +83,6 @@ The analytics layer follows a star schema with subscription, payment, and event 
 
 <img width="700" height="666" alt="data model" src="https://github.com/user-attachments/assets/1ef5c8e3-fa71-410d-9df8-ebbf296cedba" />
 
-
 ## Key Engineering Concepts Implemented
 
 ### 1. **Incremental Data Loading**
@@ -110,6 +109,7 @@ Maintains historical records for analysis
 
 Example snapshot output:
 <img width="1591" height="283" alt="image" src="https://github.com/user-attachments/assets/00688354-a1a7-48d4-85d7-9d4db6ee0013" />
+<img width="1612" height="251" alt="image" src="https://github.com/user-attachments/assets/e1c95df3-f037-43f9-825c-9f65449b63d1" />
 
 
 ### 3. **Data Quality and Best Practices**
