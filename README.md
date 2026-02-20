@@ -40,17 +40,27 @@ https://github.com/user-attachments/assets/e8a1ede9-a1f2-4d5f-a53d-73c8db8cf7d0
    - users
    - plans
    - subscriptions
+  
+<img width="1917" height="295" alt="image" src="https://github.com/user-attachments/assets/94f329b2-5559-40ad-baa9-c2d9d2906be7" />
+
 
 2. S3 Files
    - events.csv
    - payments.json
+<img width="1915" height="435" alt="image" src="https://github.com/user-attachments/assets/f26be402-c54f-486c-a695-13d2e3c5fa20" />
+<img width="1918" height="392" alt="image" src="https://github.com/user-attachments/assets/b40b3cf9-d100-4b98-85a5-28649453ff0b" />
+<img width="1917" height="387" alt="image" src="https://github.com/user-attachments/assets/55cd1054-a413-4e45-8da0-88efcc71f918" />
+  
+
 
 ## <img width="20" height="20" alt="snowflake-bug-color-rgb@2x" src="https://github.com/user-attachments/assets/a3d498f8-8a40-48c6-ab83-d5bc2566d00b" /> Snowflake Layers
 
 1. External Stage
 Used for S3 data integration.
+<img width="1608" height="272" alt="image" src="https://github.com/user-attachments/assets/5e13813e-8c60-4253-a673-26135da535c4" />
 
-2. Raw Layer
+
+3. Raw Layer
 Direct ingestion from sources:
 - users_raw
 - plans_raw
