@@ -108,6 +108,10 @@ Tracks changes in:
 
 Maintains historical records for analysis
 
+Example snapshot output:
+<img width="1591" height="283" alt="image" src="https://github.com/user-attachments/assets/00688354-a1a7-48d4-85d7-9d4db6ee0013" />
+
+
 ### 3. **Data Quality and Best Practices**
 - Implemented dbt tests for data quality:
   - Not null tests
